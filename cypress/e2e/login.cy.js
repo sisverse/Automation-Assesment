@@ -1,9 +1,8 @@
 /// <reference types="cypress"/>
 import Login from "../support/page_object/login.po";
 describe("Automation Assesment", () => {
-   const username = Cypress.env('username');
-   const password = Cypress.env('password');
-
+  const username = Cypress.env("username");
+  const password = Cypress.env("password");
   const login = new Login();
   it("Login", () => {
     cy.visit("/practice-test-login");
@@ -16,7 +15,6 @@ describe("Automation Assesment", () => {
     );
     login.LoginText().should("contain", "Congratulations");
     login.LoginText().should("contain", "successfully logged in");
-
     login.LogoutBtn();
   });
 });
